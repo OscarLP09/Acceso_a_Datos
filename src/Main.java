@@ -13,5 +13,9 @@ public class Main {
         listado.add(4);
 
         System.out.println(listado);
+
+        listado.addAll(listado);
+
+        System.out.println(listado);
     }
 }
