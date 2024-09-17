@@ -15,5 +15,7 @@ public class HashSet {
         System.out.println(mapa.values());
         System.out.println(mapa.keySet());
 
+        System.out.println(mapa.get("ddd"));
+
     }
 }
