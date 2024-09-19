@@ -1,12 +1,14 @@
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class bufferReader {
 
     public static void main(String[] args) {
         String archivo = "archivo.txt";
+
         String archivo2 = "archivo_copia.txt";
 
         // Llamada para scrapear una URL
@@ -20,6 +22,18 @@ public class bufferReader {
 
         // Llamada para leer un archivo usando Scanner
         leerScanner(archivo);
+
+        Properties prop = new Properties();
+        prop.setProperty("Nombre", "Alejandro");
+        prop.setProperty("Apellido", "Peña");
+        prop.setProperty("correo", "ejemplo@gmail.com");
+
+        System.out.println(prop);
+        try{
+        prop.store(new FileWriter("props.cfg"), "Info del usuario");
+    } catch (IOException e){
+            throw new RuntimeException(e);
+        }
     }
 
     // Método para copiar el contenido de un archivo a otro
@@ -40,7 +54,7 @@ public class bufferReader {
     // Método para leer un archivo usando Scanner
     private static void leerScanner(String ruta) {
         try (Scanner sc = new Scanner(new File(ruta))) {
-            while (sc.hasNextLine()) {
+            while (sc.hasNext()) {
                 System.out.println(sc.nextLine());  // Leer línea por línea
             }
         } catch (FileNotFoundException e) {
