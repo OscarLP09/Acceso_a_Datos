@@ -1,4 +1,4 @@
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -7,10 +7,11 @@ public class principal2 {
 
         Properties props = new Properties();
         try{
-            props.load(new FileReader("props.cfg"));
+            props.loadFromXML(new FileInputStream("props.cfg"));
         } catch (IOException e){
             throw new RuntimeException(e);
         }
         System.out.println(props);
+        System.out.println(System.getenv());
     }
 }
