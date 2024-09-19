@@ -9,7 +9,4 @@ public class sandwich {
         private Double grosor;
 
     }
-
-
-
 }
