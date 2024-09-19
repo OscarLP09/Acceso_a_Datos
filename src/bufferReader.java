@@ -42,7 +42,7 @@ public class bufferReader {
 
                 String linea;
                 while ((linea = bfr.readLine()) != null) {
-                    System.out.println(linea); // Aquí puedes hacer lo que quieras con el contenido
+                    if(linea.contains("<title>")) System.out.println(linea); // Aquí puedes hacer lo que quieras con el contenido
                 }
             } catch (IOException e) {
                 e.printStackTrace();
